@@ -37,14 +37,17 @@ export const whatsappLink = (service?: string) =>
     service ? `Hi Brush, I'd like to book: ${service}.` : `Hi Brush, I'd like to book an appointment.`,
   )}`;
 
+/** A page address under the site's base path (`/` locally, `/Brush-Salon-website-demo/` on GitHub Pages). */
+export const pageUrl = (path = '') => `${import.meta.env.BASE_URL}${path}`;
+
 export type PageId = 'home' | 'services' | 'gallery' | 'team' | 'contact';
 
 export const nav: {id: PageId; label: string; href: string}[] = [
-  {id: 'home', label: 'Home', href: '/'},
-  {id: 'services', label: 'Services & prices', href: '/services/'},
-  {id: 'gallery', label: 'Gallery', href: '/gallery/'},
-  {id: 'team', label: 'Meet the team', href: '/team/'},
-  {id: 'contact', label: 'Contact & booking', href: '/contact/'},
+  {id: 'home', label: 'Home', href: pageUrl()},
+  {id: 'services', label: 'Services & prices', href: pageUrl('services/')},
+  {id: 'gallery', label: 'Gallery', href: pageUrl('gallery/')},
+  {id: 'team', label: 'Meet the team', href: pageUrl('team/')},
+  {id: 'contact', label: 'Contact & booking', href: pageUrl('contact/')},
 ];
 
 /** Headline lines; `i` lines are set in italic. */

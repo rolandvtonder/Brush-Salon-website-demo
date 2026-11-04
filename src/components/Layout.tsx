@@ -1,5 +1,5 @@
 import {useCallback, useEffect, useRef, useState, type ReactNode} from 'react';
-import {contact, whatsappLink, type PageId} from '../content';
+import {contact, pageUrl, whatsappLink, type PageId} from '../content';
 import {useReducedMotion} from '../hooks/useReducedMotion';
 import {media} from '../lib/media';
 import {lockScroll, startScroll} from '../lib/scroll';
@@ -69,7 +69,7 @@ export function Layout({page, children}: {page: PageId; children: ReactNode}) {
         Skip to content
       </a>
 
-      <a href="/" className="fixed top-5 left-5 z-[55] block mix-blend-difference md:top-7 md:left-12" aria-label="Brush Salon, home">
+      <a href={pageUrl()} className="fixed top-5 left-5 z-[55] block mix-blend-difference md:top-7 md:left-12" aria-label="Brush Salon, home">
         <img src={media('logo-white.png')} alt="" width={481} height={156} className="h-auto w-[118px] md:w-[148px]" />
       </a>
 

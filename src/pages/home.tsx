@@ -3,7 +3,7 @@ import {Eyebrow} from '../components/Headline';
 import {Hero} from '../components/Hero';
 import {Pillars} from '../components/Pillars';
 import {WhatsAppIcon} from '../components/Layout';
-import {brand, contact, gallery, reviews, whatsappLink} from '../content';
+import {brand, contact, gallery, pageUrl, reviews, whatsappLink} from '../content';
 import {useReveals} from '../hooks/useReveals';
 import {media, photo} from '../lib/media';
 import {mount} from './mount';
@@ -29,7 +29,7 @@ function Story() {
             </p>
             <p>{brand.promise}</p>
           </div>
-          <a data-reveal style={{'--d': '0.2s'} as CSSProperties} href="/team/" className="caps mt-10 inline-flex min-h-11 items-center gap-3 border-b border-ink/40 pb-1 hover:border-ink">
+          <a data-reveal style={{'--d': '0.2s'} as CSSProperties} href={pageUrl('team/')} className="caps mt-10 inline-flex min-h-11 items-center gap-3 border-b border-ink/40 pb-1 hover:border-ink">
             Meet the team <span aria-hidden>→</span>
           </a>
         </div>
@@ -98,7 +98,7 @@ function GalleryTeaser() {
               Fresh from <span className="it">the chair</span>
             </h2>
           </div>
-          <a href="/gallery/" className="caps inline-flex min-h-11 items-center gap-3 self-start border-b border-white/40 pb-1 hover:border-white md:self-end">
+          <a href={pageUrl('gallery/')} className="caps inline-flex min-h-11 items-center gap-3 self-start border-b border-white/40 pb-1 hover:border-white md:self-end">
             See the gallery <span aria-hidden>→</span>
           </a>
         </div>
@@ -139,7 +139,7 @@ function Visit() {
             <a href={whatsappLink()} target="_blank" rel="noopener" className="caps inline-flex min-h-12 items-center gap-3 bg-ink px-7 py-3.5 text-white transition-colors hover:bg-moss">
               <WhatsAppIcon /> WhatsApp {contact.phoneDisplay}
             </a>
-            <a href="/contact/" className="caps inline-flex min-h-12 items-center gap-3 border border-ink/30 px-7 py-3.5 transition-colors hover:border-ink">
+            <a href={pageUrl('contact/')} className="caps inline-flex min-h-12 items-center gap-3 border border-ink/30 px-7 py-3.5 transition-colors hover:border-ink">
               Directions & hours
             </a>
           </div>

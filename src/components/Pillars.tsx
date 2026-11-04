@@ -1,5 +1,5 @@
 import type {CSSProperties} from 'react';
-import {pillars} from '../content';
+import {pageUrl, pillars} from '../content';
 import {useInView} from '../hooks/useInView';
 import {photo} from '../lib/media';
 
@@ -18,7 +18,7 @@ export function Pillars() {
           return (
             <a
               key={b.id}
-              href={`/services/#${b.id}`}
+              href={pageUrl(`services/#${b.id}`)}
               className={`group relative block overflow-hidden transition-transform duration-[1100ms] ease-wipe max-md:h-[78svh] ${shown ? 'translate-x-0' : 'translate-x-[calc(100%_+_100vw)]'}`}
               style={{transitionDelay: `${0.12 + i * 0.16}s`, background: b.tint} as CSSProperties}
             >
